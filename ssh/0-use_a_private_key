@@ -1,2 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
+# This script uses ssh with the private key ~/.ssh/school to connect as user ubuntu
+
 ssh -i ~/.ssh/school ubuntu@8.8.8.8
