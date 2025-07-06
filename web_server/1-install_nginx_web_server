@@ -1,13 +1,9 @@
 #!/usr/bin/env bash
-# Installs nginx and configures a page containing "Holberton School for the win!"
+# Installs nginx and serves a page containing "Holberton School for the win!"
 
 apt-get update -y
 apt-get install -y nginx
 
 echo "Holberton School for the win!" > /var/www/html/index.html
 
-if pgrep nginx > /dev/null; then
-  /usr/sbin/nginx -s reload
-else
-  /usr/sbin/nginx
-fi
+service nginx restart
