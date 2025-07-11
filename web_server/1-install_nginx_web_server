@@ -1,10 +1,14 @@
 #!/usr/bin/env bash
-# Install nginx, configure server root and index, and restart nginx
+# Script to install nginx, configure it, and serve "Holberton School" on port 80
+# Must use apt-get with -y and avoid systemctl commands
 
- apt-get update -y
+# Update package lists
+apt-get update -y
+
+# Install nginx with automatic yes to prompts
 apt-get install -y nginx
 
-# Write minimal nginx config
+# Create minimal nginx site config to listen on port 80 and serve /var/www/html/index.html
 cat > /etc/nginx/sites-available/default <<EOF
 server {
     listen 80 default_server;
@@ -21,11 +25,12 @@ server {
 }
 EOF
 
-# Ensure the symlink exists
+# Enable the default site (symlink)
 ln -sf /etc/nginx/sites-available/default /etc/nginx/sites-enabled/default
 
-# Write the required index.html file
+# Put the required content in the default index.html
 echo "Holberton School for the win!" > /var/www/html/index.html
 
-# Restart nginx without systemctl
+# Restart nginx using service command (not systemctl)
 service nginx restart
+
