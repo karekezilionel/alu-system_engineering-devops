@@ -32,5 +32,5 @@ ln -sf /etc/nginx/sites-available/default /etc/nginx/sites-enabled/default
 echo "Holberton School for the win!" > /var/www/html/index.html
 
 # Restart nginx using service command (not systemctl)
-service nginx restart
+ service nginx restart
 
