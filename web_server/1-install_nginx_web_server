@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 # Install nginx, configure server root and index, and restart nginx
 
-apt-get update -y
+ apt-get update -y
 apt-get install -y nginx
 
 # Write minimal nginx config
