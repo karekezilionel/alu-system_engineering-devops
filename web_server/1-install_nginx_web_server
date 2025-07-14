@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 #servers are the pieces of software generating and serving HTML pages
-# Install Nginx and configure a custom HTML page
+#install Nginx and configure a custom HTML page
 
 apt-get update -y
 apt-get install nginx -y 
