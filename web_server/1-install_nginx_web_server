@@ -1,15 +1,9 @@
 #!/usr/bin/env bash
+#servers are the pieces of software generating and serving HTML pages
 # Install Nginx and configure a custom HTML page
 
 apt-get update -y
-apt-get install nginx -y
-
-# Allow HTTP traffic through firewall (safe even if UFW is not active)
-ufw allow 'Nginx HTTP'
-
-# Set custom index.html content
-echo "Holberton School for the win!" > /var/www/html/index.html
-
-# Restart Nginx using service (no systemctl)
+apt-get install nginx -y 
+sudo ufw allow 'Nginx HTTP'
+sh -c 'echo "Holberton School" > /var/www/html/index.html'
 service nginx restart
- 
